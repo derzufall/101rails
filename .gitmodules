@@ -1,0 +1,3 @@
+[submodule "wiki_content"]
+	path = wiki_content
+	url = git://github.com/burgua/wiki_content.git

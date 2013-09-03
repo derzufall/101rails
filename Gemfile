@@ -22,6 +22,8 @@ gem 'exception_notification', '4.0.1'
 
 gem 'request-log-analyzer', '1.12.9'
 
+gem 'watir-webdriver'
+
 # twitter bootstrap as sass
 gem 'bootstrap-sass', '2.3.2.1'
 

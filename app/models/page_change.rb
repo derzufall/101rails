@@ -1,6 +1,7 @@
 class PageChange
 
   include Mongoid::Document
+  include Mongoid::Paranoia
   include Mongoid::Timestamps::Created
 
   belongs_to :page

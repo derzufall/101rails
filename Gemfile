@@ -17,6 +17,8 @@ end
 # * rails-backbone
 gem 'rails', '3.2.13'
 
+gem 'colorize'
+
 # send email on error
 gem 'exception_notification', '4.0.1'
 

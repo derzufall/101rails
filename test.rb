@@ -2,8 +2,9 @@ require 'watir-webdriver'
 require "watir-webdriver/wait"
 require 'cgi'
 require 'timeout'
+require 'colorize'
 
-@b = Watir::Browser.new :firefox
+@b = Watir::Browser.new :phantomjs
 @b.window.resize_to(800, 800)
 @b.window.move_to(0, 0)
 
@@ -17,21 +18,25 @@ def create_screenshot(page)
       @b.div(:class, 'triple').wait_until_present
       @b.div(:id, 'backlinks').wait_until_present
       @b.div(:class, 'content-loading').wait_while_present
+      time_spent = Time.now - start
+      out_str = "Spent #{time_spent} seconds for page #{page}"
+      puts (time_spent.to_f > 3) ? out_str.yellow : out_str.green
     end
   rescue
-    puts "Wait too long for #{page}"
+    puts "Waited too long for #{page}".red
   end
-
-  puts "Spent #{Time.now - start} seconds for page #{page}"
   sleep 1
-  @b.screenshot.save CGI::escape(page)+"--#{Time.now}.png"
+  @b.screenshot.save "screenshots/#{CGI::escape(page)}--#{Time.now}.png"
 
 end
 
 # warm up domain resolving
 @b.goto "http://101companies.org/"
 
-1.times do
+start = Time.now
+puts "Started at #{start}".light_blue
+50.times do
+  puts '------------------------------------------------'.light_blue
   create_screenshot '@project'
   create_screenshot 'Namespace:Feature'
   create_screenshot 'Monad'
@@ -44,3 +49,5 @@ end
 end
 
 @b.close
+
+puts "Ended at #{Time.now - start}".light_blue

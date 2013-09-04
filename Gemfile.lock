@@ -93,6 +93,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    colorize (0.5.8)
     compass (0.12.2)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -313,6 +314,7 @@ DEPENDENCIES
   capistrano (= 2.15.5)
   closure-compiler (= 1.1.10)
   coffee-rails (= 3.2.2)
+  colorize
   compass-rails (= 1.0.3)
   exception_notification (= 4.0.1)
   font-awesome-rails (= 3.2.1.3)

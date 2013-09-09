@@ -5,8 +5,6 @@ require 'timeout'
 require 'colorize'
 
 @b = Watir::Browser.new :phantomjs
-@b.window.resize_to(800, 800)
-@b.window.move_to(0, 0)
 
 def create_screenshot(page)
 

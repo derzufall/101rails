@@ -27,7 +27,7 @@ gem 'request-log-analyzer', '1.12.9'
 gem 'watir-webdriver'
 
 # twitter bootstrap as sass
-gem 'bootstrap-sass', '2.3.2.1'
+gem 'bootstrap-sass', '2.3.2.2'
 
 group :assets do
   gem 'sass-rails',   '3.2.6'

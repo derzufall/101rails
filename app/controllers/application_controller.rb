@@ -54,7 +54,7 @@ class ApplicationController < ActionController::Base
 
   # profiling with ruby-prof
   # add ?profile=true or &profile=true to url to profile it
-  around_filter :profile if Rails.env == 'development'
+  around_filter :profile
   def profile
     if params[:profile] && result = RubyProf.profile { yield }
       out = StringIO.new

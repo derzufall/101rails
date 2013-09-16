@@ -47,5 +47,6 @@ puts "Started at #{start}".light_blue
   create_screenshot 'Quicksort'
 end
 
-puts "Ended at #{Time.now - start}".light_blue
+puts '------------------------------------------------'.light_blue
+puts "Ended in #{Time.now - start} seconds".light_blue
 @b.close
